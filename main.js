@@ -8,7 +8,7 @@ for(let posicion= 0; posicion < 5; posicion++){
     PromedioDeVentas = PromedioDeVentas + VentasDiarias [posicion];
 }
 
-const promedio = VentasDiarias/5;
+const Promedio = VentasDiarias/5;
 console.log(PromedioDeVentas);
 
 if( PromedioDeVentas > 25){
@@ -35,20 +35,52 @@ if(edadDelUsuario >= 18){
 }
 
 
-/*Arrays*/
+/**Carrito de compras**/
 
-const Drummers = ['Mapex', 15, '$500000'];
-const Cymbals = ['DW', 55, '$565656'];
+const carrito = [];
 
-const TopDrummers = Drummers.concat(Cymbals);
+function agregarAlCarrito(producto){
+    //aqui pongo antes validar stock
+    //validar marcas
+    carrito.push(producto);  
+    console.log( carrito);
+}
 
-console.log(TopDrummers); 
-console.log(Drummers);
-console.log(Cymbals);
+agregarAlCarrito({id: 001, name: "DW", price: "$1000000"})
+
+agregarAlCarrito({id: 002, name: "Mapex", price: "$900000"})
+
+const drummers = [
+    {nombre: "DW", price: "$1000000"},
+    {nombre: "Mpex", price: "$900000"},
+    
+]
+const resultado = drummers.filter ( (el) => el.nombre.includes('DW'))
+ 
+console.log(resultado)
 
 
-const TopDrummer = ['mapex', 'dw', 'yamaha', 'pearl'];
+/**para borrar algun producto del carrito*/ 
 
-TopDrummer.includes('dw'); 
-TopDrummer.includes('ludwing'); 
+function borrarProductoDelCarrito(idDelProducto){
+    const index = carrito.findIndex(producto => producto.id === idDelProducto);
+    carrito.splice(index, 1);
+    console.log(carrito);
+}
 
+borrarProductoDelCarrito(001);
+
+/**DOM */
+
+
+let header__menu = document.getElementsByClassName ("header__menu");
+console.log (header__menu [0].innerHTML);
+console.log (header__menu [1].innerHTML);
+console.log (header__menu [2].innerHTML);
+console.log (header__menu [3].innerHTML);
+console.log (header__menu [4].innerHTML);
+console.log (header__menu [5].innerHTML);
+
+    for (const header of header__menu) {
+        console.log (header.innerHTML);
+    }
