@@ -19,21 +19,15 @@ if( PromedioDeVentas > 25){
 
 
 
-/**Alert para ventas con Nombre */
-for(let i=1; i<=1; i++) {
-    enterName= prompt(" Please, enter name");
- 
-    alert("Sale N° "+i+" Name: "+enterName);
-}
+/**Pre entrega con edad */
+var edad = prompt("¿HOW OLD ARE YOU?");
+console.log('el usuario ingreso su edad:'+ edad);
 
+/**Pre entrega ENCONTRAR edades ingresadas */
 
-const edadDelUsuario = parseInt(prompt("Please, enter age"));
-if(edadDelUsuario >= 18){
-    alert("ADULT");
-}else{
-    alert("YOUNGER");
-}
-
+let age = [21, 43, 23, 1, 34, 12, 8];
+console.log(age.find(i => i > 20));
+console.log(age.find(i => i > 21))
 
 /**Carrito de compras**/
 
